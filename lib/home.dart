@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto1/riview.dart';
 
 import 'description_place.dart';
 
@@ -6,26 +7,41 @@ class MyHome extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
 
-    final descriptionPlace = Container(
+    final descriptionplace = Container(
       margin: EdgeInsets.only(
-        top: 250,
-        left: 30,
-        right: 30
+        top: 500,
+        left: 20,
+          right: 30
+
       ),
-      child: DescriptionPlace("Uyuni", 4, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."),
+      child: DescriptionPlace("Uyuni", 4, "Caminar en medio de la nada. A veces sobre un suelo pálido e interminable, a veces sobre las nubes. El blanco infinito bajo mis pies solo se interrumpe cuando arremete contra el azul del cielo, en la lejanía de un horizonte inacabable y continuo. Entre tanta inmensidad, la soledad es absoluta y el silencio, total. Una gaviota pasa volando sobre mi cabeza para luego darme cuenta de que me hallo sobre una fina capa de agua que refleja todo alrededor. Camino sobre las nubes."),
+    );
+
+
+    final review = Container(
+      margin: EdgeInsets.only(
+          top: 500,
+          left: 30,
+          right: 30
+
+      ),
+      height: 80,
+      child: Review("assets/images/persona1.jpg","laura Leon","1 reviews - 3 photos",4,"Muy bueno el lugar")
     );
 
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "My Places"
+            "my place"
         ),
       ),
-      body: Stack (
+      body: Stack(
         children: <Widget>[
-            descriptionPlace
+          review
+
         ],
-      )
+      ),
     );
   }
+
 }

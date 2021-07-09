@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
-class DescriptionPlace extends StatelessWidget {
-
+class DescriptionPlace extends StatelessWidget{
+  //variable
   String textoTitulo;
   int cantidadEstrellas;
   String textoDescripcion;
 
-  DescriptionPlace(this.textoTitulo, this.cantidadEstrellas, this.textoDescripcion);
+  //metodo constructor
+  DescriptionPlace(this.textoTitulo,this.cantidadEstrellas,this.textoDescripcion);
 
   @override
   Widget build(BuildContext context) {
@@ -14,20 +15,21 @@ class DescriptionPlace extends StatelessWidget {
       margin: EdgeInsets.only(
         right: 20
       ),
-      child: Text(
-        textoTitulo,
-        style: TextStyle(
-              fontFamily: "Lato",
-              fontSize: 38,
-              fontWeight: FontWeight.bold
+        child: Text(
+          textoTitulo,
+          style: TextStyle(
+            fontFamily: "Lato",
+            fontSize: 38,
+            fontWeight: FontWeight.bold
+          ),
         ),
-      ),
-    );
+      );
+
     final estrella = Container(
       margin: EdgeInsets.only(
-        right: 5
+          right: 5
       ),
-      child: Icon(
+       child: Icon(
         Icons.star,
         color: Colors.amber,
       ),
@@ -35,7 +37,7 @@ class DescriptionPlace extends StatelessWidget {
 
     final estrellaBorde = Container(
       margin: EdgeInsets.only(
-        right: 5
+          right: 5
       ),
       child: Icon(
         Icons.star_border,
@@ -43,25 +45,25 @@ class DescriptionPlace extends StatelessWidget {
       ),
     );
 
-    List<Container> estrellas = new List();
-    for(int i=0; i < 5; i++){
-       if(i < cantidadEstrellas){
-          estrellas.add(estrella);
-       } else {
-          estrellas.add(estrellaBorde);
-       }
-    }
 
-    final filaEstrellas = Row(
+//   fila estrellas
+    List<Container>estrellas = new List();
+    for(int i = 0; i < 5; i++){
+      if(i < cantidadEstrellas){
+        estrellas.add(estrella);
+      }else{
+        estrellas.add(estrellaBorde);
+      }
+    }
+    final  filastrellas = Row(
       children: estrellas,
     );
-
-    final filaTitulo = Row(
-      children: <Widget>[
-        titulo,
-        filaEstrellas
-      ],
-    );
+   final filatitulo = Row (
+     children: <Widget>[
+       titulo,
+       filastrellas
+     ],
+   );
 
     final descripcion = Container(
       margin: EdgeInsets.only(
@@ -69,20 +71,30 @@ class DescriptionPlace extends StatelessWidget {
       ),
       child: Text(
           textoDescripcion,
-          style: TextStyle(
+        style: TextStyle(
           fontFamily: "Lato",
-          color: Colors.black54
-        ),
+          color: Colors.black45
+      ),
+
       ),
     );
 
+
     final descriptionPlace = Column(
-      children: <Widget>[
-        filaTitulo,
-        descripcion
-      ],
+        children: <Widget>[
+        filatitulo,
+          descripcion
+    ],
     );
-    return descriptionPlace;
+    return   descriptionPlace
+        ;
   }
 
+
 }
+
+
+
+
+
+

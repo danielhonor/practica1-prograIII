@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto1/review_list.dart';
 import 'package:proyecto1/riview.dart';
 
 import 'description_place.dart';
@@ -9,8 +10,8 @@ class MyHome extends StatelessWidget{
 
     final descriptionplace = Container(
       margin: EdgeInsets.only(
-        top: 500,
-        left: 20,
+        top: 50,
+        left: 30,
           right: 30
 
       ),
@@ -18,15 +19,24 @@ class MyHome extends StatelessWidget{
     );
 
 
-    final review = Container(
+    final reviewList = Container(
       margin: EdgeInsets.only(
-          top: 500,
+          top: 20,
           left: 30,
           right: 30
 
       ),
-      height: 80,
-      child: Review("assets/images/persona1.jpg","laura Leon","1 reviews - 3 photos",4,"Muy bueno el lugar")
+
+      child:ReviewList()
+    );
+
+    //ListView
+    final listView = ListView(
+      children:<Widget>[
+        descriptionplace,
+        reviewList
+      ],
+
     );
 
     return Scaffold(
@@ -37,7 +47,7 @@ class MyHome extends StatelessWidget{
       ),
       body: Stack(
         children: <Widget>[
-          review
+         listView
 
         ],
       ),

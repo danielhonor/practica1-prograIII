@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto1/gradient_back.dart';
 import 'package:proyecto1/review_list.dart';
 import 'package:proyecto1/riview.dart';
 
@@ -47,7 +48,7 @@ class MyHome extends StatelessWidget{
       ),
       body: Stack(
         children: <Widget>[
-         listView
+         GradientBack()
 
         ],
       ),

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto1/gradient_back.dart';
+import 'package:proyecto1/home_app_bar.dart';
 import 'package:proyecto1/review_list.dart';
 import 'package:proyecto1/riview.dart';
 
+import 'card_image.dart';
 import 'description_place.dart';
 
 class MyHome extends StatelessWidget{
@@ -11,7 +13,7 @@ class MyHome extends StatelessWidget{
 
     final descriptionplace = Container(
       margin: EdgeInsets.only(
-        top: 50,
+        top: 300,
         left: 30,
           right: 30
 
@@ -43,7 +45,8 @@ class MyHome extends StatelessWidget{
     return Scaffold(
         body: Stack(
         children: <Widget>[
-         CardImage("assets/images/lugar1.jpg")
+          listView,
+          HomeAppBar("Popular")
 
         ],
       )

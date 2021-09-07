@@ -86,7 +86,7 @@ class DescriptionPlace extends StatelessWidget{
         children: <Widget>[
         filatitulo,
           descripcion,
-          RoundedButton("Nvigate")
+          RoundedButton("Navigate")
     ],
     );
     return   descriptionPlace
